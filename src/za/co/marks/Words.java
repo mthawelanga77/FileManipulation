@@ -10,6 +10,7 @@ import java.math.RoundingMode;
 import java.util.Set;
 import java.util.TreeSet;
 import za.co.marks.constants.*;
+import static java.lang.Character.toLowerCase;
 
 public class Words {
 
@@ -40,7 +41,7 @@ public class Words {
     public Set<Character> getUniqueCharacters(char[] uniqueChars) {
         Set<Character> uniqueSet = new TreeSet<>();
         for (char c : uniqueChars) {
-            if (c == 'A' || c == 'a' || c == 'E' || c == 'e' || c == 'I' || c == 'i' || c == 'O' || c == 'o' || c == 'u') {
+            if (toLowerCase(c) == 'a' || toLowerCase(c) == 'e' || toLowerCase(c) == 'i' || toLowerCase(c) == 'o' || toLowerCase(c) == 'u') {
                 uniqueSet.add(c);
             }
         }
