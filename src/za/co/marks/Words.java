@@ -17,15 +17,15 @@ public class Words {
     public String readFile() throws IOException {
         String data;
         StringBuilder strBuilder = new StringBuilder();
-        File file = new File(Constants.FILENAME);
-        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+        
+        try (BufferedReader reader = new BufferedReader(new FileReader(new File(Constants.FILENAME)))) {
             if (reader == null) {
                 throw new IOException("There was an error opening an input.txt file.");
             }
             while ((data = reader.readLine()) != null) {
                 strBuilder.append(data);
             }
-        }
+        } 
         return strBuilder.toString();
     }
 
