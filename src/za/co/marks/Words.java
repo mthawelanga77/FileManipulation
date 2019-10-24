@@ -16,17 +16,17 @@ public class Words {
 
     public String readFile() throws IOException {
         String data;
-        String strBuilder = "";
+        StringBuilder strBuilder = new StringBuilder();
         File file = new File(Constants.FILENAME);
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             if (reader == null) {
                 throw new IOException("There was an error opening an input.txt file.");
             }
             while ((data = reader.readLine()) != null) {
-                strBuilder += data;
+                strBuilder.append(data);
             }
         }
-        return strBuilder;
+        return strBuilder.toString();
     }
 
     public String[] getWordsIntoArray(String str, String delimiter) {
